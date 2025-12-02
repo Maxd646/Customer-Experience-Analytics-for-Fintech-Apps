@@ -1,0 +1,42 @@
+# PostgreSQL configuration (env-first)
+
+default: &default
+  driver: postgresql
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  database: ${DB_NAME}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  sslmode: ${DB_SSLMODE:disable}
+
+  # connection pooling
+  pool_size: ${DB_POOL_SIZE:5}
+  max_overflow: ${DB_MAX_OVERFLOW:10}
+  pool_timeout: ${DB_POOL_TIMEOUT:30}
+  pool_recycle: ${DB_POOL_RECYCLE:1800}
+  echo_sql: ${DB_ECHO_SQL:false}
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+  sslmode: ${DB_SSLMODE:require}
+  pool_size: ${DB_POOL_SIZE:10}
+  max_overflow: ${DB_MAX_OVERFLOW:20}
+  echo_sql: ${DB_ECHO_SQL:false}
+
+testing:
+  <<: *default
+  host: ${TEST_DB_HOST:localhost}
+  port: ${TEST_DB_PORT:5432}
+  database: ${TEST_DB_NAME:bank_reviews_test}
+  user: ${TEST_DB_USER:postgres}
+  password: ${TEST_DB_PASSWORD:postgres}
+  sslmode: ${TEST_DB_SSLMODE:disable}
+  pool_size: 2
+  max_overflow: 2
+  echo_sql: false
+
+data:
+  csv_path: "data/processed/nlp_enriched_reviews.csv"
