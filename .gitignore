@@ -1,6 +1,11 @@
+.vscode/
+.DS_Store
+.venv/
 __pycache__/
 *.pyc
 .env
-data/raw/*
-data/interim/*
-data/processed/*
+
+
+data/
+logs/
+temp/

@@ -31,7 +31,6 @@ dependencies = [
     # NLP / Sentiment
     "nltk",
     "spacy",
-    "transformers",
 
     # Visualization / reporting
     "matplotlib",
