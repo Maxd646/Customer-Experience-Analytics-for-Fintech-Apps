@@ -1,38 +1,30 @@
-# Fintech App Customer Experience Analytics
+# Task 2 — Sentiment and Thematic Analysis
 
 ## Overview
-This project focuses on analyzing customer satisfaction with mobile banking apps by collecting and processing user reviews from the Google Play Store for three Ethiopian banks:
-- Commercial Bank of Ethiopia (CBE)
-- Bank of Abyssinia (BOA)
-- Dashen Bank
+Analyze the reviews collected in Task 1 to identify customer sentiments and recurring themes.
 
-The goal is to scrape reviews, analyze sentiments and themes, and visualize insights as a Data Analyst at Omega Consultancy.
+## Sentiment Analysis
+- Use `distilbert-base-uncased-finetuned-sst-2-english` or simpler libraries like VADER/TextBlob.
+- Compute sentiment scores (positive, negative, neutral).
+- Aggregate by bank and rating.
 
-## Business Objective
-Omega Consultancy is supporting banks to improve their mobile apps to enhance customer retention and satisfaction. Your role is to:
-- Scrape user reviews from Google Play Store.
-- Analyze sentiment and extract themes.
-- Identify satisfaction drivers and pain points.
-- Store cleaned review data in PostgreSQL.
-- Deliver reports with visualizations and actionable recommendations.
+## Thematic Analysis
+- Extract keywords and n-grams (TF-IDF, spaCy).
+- Cluster into 3–5 themes per bank:
+  - Account Access Issues
+  - Transaction Performance
+  - User Interface & Experience
+  - Customer Support
+  - Feature Requests
 
-## Scenarios
-1. **Retaining Users**: Identify common issues and suggest improvements.
-2. **Enhancing Features**: Extract desired features and recommend innovations.
-3. **Managing Complaints**: Cluster complaints to improve support efficiency.
+## Pipeline
+- Tokenization, stop-word removal, lemmatization
+- Save results as CSV (`review_id, review_text, sentiment_label, sentiment_score, identified_theme(s)`)
 
-## Dataset Overview
-- Review Text
-- Rating (1–5)
-- Date
-- Bank/App Name
-- Source: Google Play
-- Minimum 400 reviews per bank
+## KPIs
+- Sentiment scores for 90%+ reviews
+- 3+ themes per bank
+- Modular pipeline code
 
-
-## Learning Objectives
-- Scrape and preprocess user reviews.
-- Apply NLP for sentiment and theme analysis.
-- Design relational databases in PostgreSQL.
-- Derive actionable insights and create visualizations.
-- Employ Git and write unit tests for reliability.
+## Output
+- Cleaned, analyzed CSV dataset ready for PostgreSQL storage in Task 3
