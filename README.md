@@ -29,16 +29,6 @@ Omega Consultancy is supporting banks to improve their mobile apps to enhance cu
 - Source: Google Play
 - Minimum 400 reviews per bank
 
-## Team
-- Kerod
-- Mahbubah
-- Filimon
-
-## Key Dates
-- Introduction: 26 Nov 2025
-- Interim Submission: 30 Nov 2025
-- Final Submission: 02 Dec 2025
-
 ## Learning Objectives
 - Scrape and preprocess user reviews.
 - Apply NLP for sentiment and theme analysis.
