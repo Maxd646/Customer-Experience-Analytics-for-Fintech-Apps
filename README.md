@@ -1,118 +1,47 @@
-# Fintech App – Customer Experience Analytics
+# Fintech App Customer Experience Analytics
 
-A data-driven project designed to analyze real customer feedback for a fintech mobile application using web scraping, text cleaning, and foundational NLP preprocessing.  
-This repository follows a modular, production-grade architecture to support scalable analytics in later tasks.
+## Overview
+This project focuses on analyzing customer satisfaction with mobile banking apps by collecting and processing user reviews from the Google Play Store for three Ethiopian banks:
+- Commercial Bank of Ethiopia (CBE)
+- Bank of Abyssinia (BOA)
+- Dashen Bank
 
----
+The goal is to scrape reviews, analyze sentiments and themes, and visualize insights as a Data Analyst at Omega Consultancy.
 
-## Task 1 – Data Collection & Preprocessing (COMPLETE)
+## Business Objective
+Omega Consultancy is supporting banks to improve their mobile apps to enhance customer retention and satisfaction. Your role is to:
+- Scrape user reviews from Google Play Store.
+- Analyze sentiment and extract themes.
+- Identify satisfaction drivers and pain points.
+- Store cleaned review data in PostgreSQL.
+- Deliver reports with visualizations and actionable recommendations.
 
-**Objective:**  
-Collect user reviews from the Google Play Store, store them in a structured format, and prepare a clean text dataset for downstream NLP tasks such as sentiment analysis, topic extraction, and trend visualization.
+## Scenarios
+1. **Retaining Users**: Identify common issues and suggest improvements.
+2. **Enhancing Features**: Extract desired features and recommend innovations.
+3. **Managing Complaints**: Cluster complaints to improve support efficiency.
 
----
+## Dataset Overview
+- Review Text
+- Rating (1–5)
+- Date
+- Bank/App Name
+- Source: Google Play
+- Minimum 400 reviews per bank
 
-## Project Structure (Task 1)
+## Team
+- Kerod
+- Mahbubah
+- Filimon
 
-```
-Fintech-App-Customer-Experience-Analytics/
-│
-├── configs/
-├── docs/
-│
-├── data/
-│   ├── raw/               # Raw scraped reviews
-│   ├── interim/           # Temporary/working files
-│   ├── processed/         # Cleaned dataset (Task 1 output)
-│   └── postgres_exports/
-│
-├── notebooks/             # Jupyter exploration (future tasks)
-│
-├── scripts/               # Executable Python scripts
-│   ├── scrape_reviews.py  # Scraper (Task 1)
-│   └── clean_reviews.py   # Cleaner (Task 1)
-│
-├── src/
-│   └── fintech_app_reviews/
-│       ├── scraper/       # Scraping logic
-│       ├── preprocessing/ # Text cleaning functions
-│       ├── nlp/           # NLP models (Task 2+)
-│       ├── db/            # DB integration
-│       ├── viz/           # Charts & insights
-│       └── utils/         # Helper utilities
-│
-├── tests/
-│   ├── unit/
-│   │   ├── test_cleaning.py
-│   │   └── test_scraper.py
-│   └── integration/
-│       └── test_pipeline.py
-│
-├── requirements.txt
-├── requirements-dev.txt
-├── pyproject.toml
-├── init_project.sh
-├── .gitignore
-└── README.md
-```
+## Key Dates
+- Introduction: 26 Nov 2025
+- Interim Submission: 30 Nov 2025
+- Final Submission: 02 Dec 2025
 
----
-
-## 🧹 Pipeline Overview
-
-### Scraping
-
-- Reviews collected from a Google Play Store app page.
-- `BeautifulSoup` used for lightweight HTML parsing.
-- 5 batches/pages scraped.
-- Output stored in:  
-  `data/raw/reviews_raw.csv`
-
-### Cleaning
-
-- Text normalization steps performed:
-  - Lowercasing
-  - Removing special characters
-  - Removing repeated spaces
-  - Stripping whitespace
-- Preparing clean text for NLP.
-- Output stored in:  
-  `data/processed/reviews_clean.csv`
-
----
-
-## 🛠 How to Run
-
-**Install dependencies:**
-
-```bash
-pip install -r requirements.txt
-```
-
-**Run scraper:**
-
-```bash
-python scripts/scrape_reviews.py
-```
-
-**Run cleaner:**
-
-```bash
-python scripts/clean_reviews.py
-```
-
----
-
-## Example Output Preview
-
-**Raw Review:**
-
-```
-"Great app!!! Very useful, but sometimes slow…"
-```
-
-**Cleaned Text:**
-
-```
-great app very useful but sometimes slow
-```
+## Learning Objectives
+- Scrape and preprocess user reviews.
+- Apply NLP for sentiment and theme analysis.
+- Design relational databases in PostgreSQL.
+- Derive actionable insights and create visualizations.
+- Employ Git and write unit tests for reliability.
