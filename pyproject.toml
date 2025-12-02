@@ -31,7 +31,6 @@ dependencies = [
     # NLP / Sentiment
     "nltk",
     "spacy",
-    "transformers",
 
     # Visualization / reporting
     "matplotlib",
@@ -43,8 +42,6 @@ dependencies = [
     "python-dotenv",
     # Language detetection
     "langdetect"
-    #wordCloud
-    "wordcloud"
 ]
 
 [tool.setuptools.packages.find]
