@@ -1,9 +1,34 @@
-requests
-beautifulsoup4
-pandas
+# Core
 numpy
-nltk
-scikit-learn
+pandas
+pyyaml
+python-dateutil
+# scraping
+
+google-play-scraper
+
+# Database
+sqlalchemy
 psycopg2-binary
+alembic
+
+# NLP / Sentiment
+nltk
+spacy
+transformers
+scikit-learn
+torch
+hf_xet
+
+
+# Visualization / reporting
 matplotlib
 seaborn
+plotly
+reportlab   
+
+# Utilities
+python-dotenv
+
+# Language detection
+langdetect
